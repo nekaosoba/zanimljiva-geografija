@@ -59,4 +59,4 @@ def results():
 if __name__ == '__main__':
     timer = Timer(time_limit, display_results)
     timer.start()
-    app.run()
+    app.run(host='0.0.0.0', port=5000)
