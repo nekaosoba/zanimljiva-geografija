@@ -1,0 +1,86 @@
+# zanimljiva-geografija
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Zanimljiva geografija</title>
+	<meta charset="utf-8">
+	<style>
+		#game-container {
+			display: flex;
+			justify-content: space-around;
+			margin: 50px 0;
+		}
+
+		.player {
+			width: 300px;
+			text-align: center;
+		}
+
+		input[type="text"] {
+			width: 80%;
+			height: 30px;
+			margin: 10px;
+			padding: 5px;
+			font-size: 20px;
+		}
+
+		button {
+			font-size: 20px;
+			background-color: #008CBA;
+			color: white;
+			border: none;
+			padding: 10px 20px;
+			margin: 10px;
+			cursor: pointer;
+		}
+
+		button:hover {
+			background-color: #00457C;
+		}
+
+		#game-over {
+			font-size: 30px;
+			text-align: center;
+			margin-top: 50px;
+			display: none;
+		}
+	</style>
+
+	<script>
+		window.addEventListener('DOMContentLoaded', (event) => {
+			const playerOne = {
+				score: 0,
+				country: '',
+				input: document.getElementById('player-one-input'),
+				submit: document.getElementById('player-one-submit'),
+				scoreDisplay: document.getElementById('player-one-score'),
+				countryDisplay: document.getElementById('player-one-country')
+			};
+
+			const playerTwo = {
+				score: 0,
+				country: '',
+				input: document.getElementById('player-two-input'),
+				submit: document.getElementById('player-two-submit'),
+				scoreDisplay: document.getElementById('player-two-score'),
+				countryDisplay: document.getElementById('player-two-country')
+			};
+
+			const countries = ['Afghanistan', 'Albania', 'Algeria', 'Andorra', 'Angola', 'Antigua and Barbuda', 'Argentina'];
+			
+			// Dodajte ostatak JavaScript logike igre ovdje
+			
+		});
+	</script>
+</head>
+<body>
+	<div id="game-container">
+		<div id="player-one" class="player">
+			<!-- HTML sadržaj za igrača 1 -->
+		</div>
+		<div id="player-two" class="player">
+			<!-- HTML sadržaj za igrača 2 -->
+		</div>
+	</div>
+</body>
+</html>
