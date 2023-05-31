@@ -28,13 +28,7 @@ def calculate_scores():
 
 def display_results():
     calculate_scores()
-    print("Rezultati:")
-    for player, data in players.items():
-        print(f"Igrač {player}:")
-        for category, answer in data['answers'].items():
-            print(f"{category}: {answer}")
-        print(f"Broj poena: {data['score']}")
-        print("")
+    return render_template('results.html', players=players)
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
