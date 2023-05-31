@@ -28,7 +28,19 @@ def calculate_scores():
 
 def display_results():
     calculate_scores()
-    return render_template('results.html', players=players)
+    results_html = """
+    <h1>Rezultati:</h1>
+    {% for player, data in players.items() %}
+    <h2>Igrač {{ player }}:</h2>
+    <ul>
+        {% for category, answer in data['answers'].items() %}
+        <li>{{ category }}: {{ answer }}</li>
+        {% endfor %}
+    </ul>
+    <p>Broj poena: {{ data['score'] }}</p>
+    {% endfor %}
+    """
+    return render_template_string(results_html, players=players)
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -47,7 +59,7 @@ def results():
     if request.method == 'POST':
         players['player1']['score'] = int(request.form['player1-score'])
         players['player2']['score'] = int(request.form['player2-score'])
-    return render_template('results.html', players=players)
+    return display_results()
 
 if __name__ == '__main__':
     timer = Timer(time_limit, display_results)
